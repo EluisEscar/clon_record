@@ -5,9 +5,9 @@
       <div class="grid grid-cols-6 items-center gap-3 py-4">
 
         {{-- Columna 1: Logo --}}
-        <div class="col-span-1 flex items-center gap-4">
+        <a href="{{ route('home') }}" class="inline-block" aria-label="Inicio">
           <img src="{{ Vite::asset('resources/images/header.png') }}" alt="Logo RECORD" class="h-10 w-auto">
-        </div>
+        </a>
 
         {{-- Columna 2: Buscador (centrado) --}}
         <div class="col-span-4 flex justify-center">
@@ -150,7 +150,7 @@
           </li>
           <li class="relative group">
               {{-- Trigger --}}
-              <a href="#" class="py-3 inline-block hover:text-red-600 focus:outline-none"
+              <a href="{{ route('nosotros') }}" class="py-3 inline-block hover:text-red-600 focus:outline-none"
                 tabindex="0">Nosotros</a>
 
               {{-- Dropdown --}}
@@ -169,7 +169,7 @@
                   {{-- 1 o 2 columnas (cámbialo a grid-cols-2 si quieres 2) --}}
                   <ul class="grid grid-cols-1 gap-1">
                     <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">¿Quiénes Somos?</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Nuestras tiendas</a></li>
+                    <li><a href="{{ route('locales') }}" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Nuestras tiendas</a></li>
                     <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Gestiona tu cuenta</a></li>
                   </ul>
                 </div>
@@ -193,11 +193,9 @@
                             group-hover:opacity-100 group-hover:translate-y-0
                             group-focus-within:opacity-100 group-focus-within:translate-y-0">
 
-                  {{-- 1 o 2 columnas (cámbialo a grid-cols-2 si quieres 2) --}}
                   <ul class="grid grid-cols-1 gap-1">
-                    <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Ventas institucionales</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Servicio al cliente</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Preguntas frecuentes</a></li>
+                    <li><a href="{{ route('contacto') }}" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Servicio al cliente</a></li>
+                    <li><a href="{{ route('faq') }}" class="block rounded-lg px-4 py-2.5 hover:bg-gray-50">Preguntas frecuentes</a></li>
                   </ul>
                 </div>
               </div>

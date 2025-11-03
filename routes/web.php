@@ -16,4 +16,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
+
+Route::get('/locales', function () {
+    return view('locales');
+})->name('locales');
+
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
 require __DIR__.'/auth.php';
