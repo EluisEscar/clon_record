@@ -60,6 +60,7 @@
 </section>
 
 {{-- Script básico para abrir/cerrar --}}
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".faq-item");
@@ -87,5 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 @endsection
 

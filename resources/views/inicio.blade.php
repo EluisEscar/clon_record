@@ -1,6 +1,6 @@
 @extends('layouts.tienda')
 
-@section('title','Inicio - RECORD Perú')
+@section('title','RECORD Perú')
 @section('content')
 <section class="bg-gray-100 py-12">
   <div class="max-w-7xl mx-auto px-4">
