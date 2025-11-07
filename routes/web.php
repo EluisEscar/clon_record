@@ -36,4 +36,8 @@ Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
 
+Route::get('/catalogo-demo', function () {
+    return view('catalogo-demo');
+})->name('catalogo-demo');
+
 require __DIR__.'/auth.php';

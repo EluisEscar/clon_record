@@ -1,6 +1,5 @@
 @extends('layouts.tienda')
 @section('title', 'Catálogo de Productos - RECORD')
-
 @section('content')
 
 {{-- Hero / Banner superior --}}
@@ -43,3 +42,6 @@
   </div>
 </section>
 @endsection
+
+
+

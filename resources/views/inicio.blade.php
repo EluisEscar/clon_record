@@ -3,7 +3,7 @@
 @section('title','RECORD Perú')
 @section('content')
 <section class="bg-gray-100 py-12">
-  <div class="max-w-7xl mx-auto px-4">
+  <div class="max-w-[100rem] mx-auto px-6">
     <h1 class="text-3xl font-extrabold text-gray-800 mb-4">
       Bienvenido a RECORD Perú
     </h1>
@@ -12,7 +12,7 @@
     </p>
   {{-- Sección de beneficios --}}
     <section class="bg-white border-y py-6">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+  <div class="max-w-[100rem] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
 
         {{-- Item 1 --}}
         <div class="flex items-center gap-4 text-center md:text-left">
@@ -64,7 +64,7 @@
     </section>
     {{-- Sección de categorías destacadas --}}
     <section class="bg-gray-100 py-12">
-      <div class="max-w-7xl mx-auto px-6 text-center">
+  <div class="max-w-[100rem] mx-auto px-6 text-center">
 
         {{-- Título principal --}}
         <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">
@@ -121,7 +121,7 @@
     </section>
     {{-- Sección de Productos Destacados --}}
     <section class="bg-gradient-to-b from-[#f5e7dc] to-[#f8f5f2] py-14">
-      <div class="max-w-7xl mx-auto px-6 text-center">
+  <div class="max-w-[100rem] mx-auto px-6 text-center">
         <h2 class="text-3xl font-extrabold text-gray-900 mb-10">
           Productos Destacados
         </h2>
@@ -209,7 +209,7 @@
     </section>
     {{-- Sección de productos destacados tipo banner --}}
   <section class="bg-gradient-to-b from-[#f8f5f2] to-[#f4ece4] py-16">
-    <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-[100rem] mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {{-- Producto 1 --}}
@@ -243,7 +243,7 @@
     </div>
   </section>
   <section class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-6 text-center">
+  <div class="max-w-[100rem] mx-auto px-6 text-center">
       <h2 class="text-3xl font-extrabold text-gray-900 mb-10">
         Conoce Nuestros Lavaderos
       </h2>
@@ -293,7 +293,7 @@
       </div>
     </div>
   </section>
-    <section class="max-w-[100rem] mx-auto px-8 py-10">
+    <section class="max-w-[100rem] mx-6 px-8 py-10">
     <div class="grid grid-cols-1 md:grid-cols-[65%_35%] rounded-2xl overflow-hidden shadow-lg">
       {{-- Columna izquierda: Video --}}
       <div class="relative bg-black h-[380px] md:h-[360px] lg:h-[340px]">
@@ -323,7 +323,7 @@
       </div>
     </div>
   </section>
-<section class="max-w-7xl mx-auto px-6 py-16 text-center">
+<section class="max-w-[100rem] mx-auto px-6 py-16 text-center">
   <h2 class="text-2xl md:text-3xl font-extrabold mb-10">
     Descubre Nuestras Recetas
   </h2>
