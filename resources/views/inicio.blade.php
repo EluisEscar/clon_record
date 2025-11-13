@@ -289,14 +289,14 @@
             <h3 class="text-lg font-bold text-red-600">Línea Schock</h3>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-    <section class="max-w-[100rem] mx-6 px-8 py-10">
+    <!--<section class="max-w-[78rem] mx-6 px-12 py-12">-->
+    <section class="max-w-6xl mx-auto px-12 py-10">  
     <div class="grid grid-cols-1 md:grid-cols-[65%_35%] rounded-2xl overflow-hidden shadow-lg">
       {{-- Columna izquierda: Video --}}
-      <div class="relative bg-black h-[380px] md:h-[360px] lg:h-[340px]">
+      <div class="relative bg-black h-[500px] md:h-[360px] lg:h-[340px]">
         <video 
           src="{{ Vite::asset('resources/videos/presentacion2.mp4') }}" 
           autoplay 

@@ -9,11 +9,10 @@ class CatalogoController extends Controller
 {
     public function index(Request $request)
     {
-        try {
-            $productos = Product::all();
-            return view('catalogo', ['productos' => $productos]);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
+        $productos = Product::paginate(12);
+        $totalProductos = Product::count();
+
+        return view('catalogo.index', compact('productos', 'totalProductos'));
     }
 }
+

@@ -22,7 +22,9 @@
     </div>
 
     <div class="flex items-center gap-4">
-      <span class="text-sm text-gray-500">14 productos de un total de 289</span>
+      <span class="text-sm text-gray-500">
+        {{ $productos->count() }} productos de un total de {{ $totalProductos }}
+      </span>
       <div class="flex items-center gap-2">
         <label class="text-sm text-gray-600">Ordenar por:</label>
         <select class="rounded-lg border-gray-300 text-sm">
@@ -117,99 +119,56 @@
     </aside>
 
     {{-- GRID DE PRODUCTOS (cards estáticas) --}}
-    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
 
-      {{-- Card 1 --}}
-      <article class="bg-white border rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden">
-        <div class="relative">
-          <img
-            src="https://images.unsplash.com/photo-1556912173-46c336c7fd49?q=80&w=800&auto=format&fit=crop"
-            alt="Producto 1"
-            class="w-full h-48 object-cover">
-          <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">20% OFF</span>
-        </div>
-        <div class="p-4 text-center">
-          <h3 class="font-semibold text-gray-900 text-sm mb-1">Juego de ollas Belleza Acero</h3>
-          <div class="mb-2">
-            <span class="text-red-600 font-extrabold text-lg">S/ 639.90</span>
-            <span class="text-gray-400 line-through text-sm ml-2">S/ 799.90</span>
-          </div>
-          <button class="w-full bg-red-600 text-white font-semibold rounded-full py-2 hover:bg-red-700 transition">
-            AGREGAR AL CARRITO
-          </button>
-        </div>
-      </article>
+  @foreach ($productos as $producto)
+    <article class="bg-white border rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden">
 
-      {{-- Card 2 --}}
-      <article class="bg-white border rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden">
-        <div class="relative">
-          <img
-            src="https://images.unsplash.com/photo-1604908176778-1c4b8f6e0f64?q=80&w=800&auto=format&fit=crop"
-            alt="Producto 2"
-            class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4 text-center">
-          <h3 class="font-semibold text-gray-900 text-sm mb-1">Sartén Wok 28 cm</h3>
-          <div class="mb-2">
-            <span class="text-red-600 font-extrabold text-lg">S/ 102.90</span>
-          </div>
-          <button class="w-full bg-red-600 text-white font-semibold rounded-full py-2 hover:bg-red-700 transition">
-            AGREGAR AL CARRITO
-          </button>
-        </div>
-      </article>
+      <div class="relative">
+        <img 
+          src="{{ asset($producto->imagen_principal) }}" 
+          alt="{{ $producto->titulo }}"
+          class="w-full h-48 object-cover">
 
-      {{-- Card 3 --}}
-      <article class="bg-white border rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden">
-        <div class="relative">
-          <img
-            src="https://images.unsplash.com/photo-1613471644137-8ad9b05de6c3?q=80&w=800&auto=format&fit=crop"
-            alt="Producto 3"
-            class="w-full h-48 object-cover">
-          <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nuevo</span>
-        </div>
-        <div class="p-4 text-center">
-          <h3 class="font-semibold text-gray-900 text-sm mb-1">Cafetera Inox 12 tazas</h3>
-          <div class="mb-2">
-            <span class="text-red-600 font-extrabold text-lg">S/ 199.00</span>
-          </div>
-          <button class="w-full bg-red-600 text-white font-semibold rounded-full py-2 hover:bg-red-700 transition">
-            AGREGAR AL CARRITO
-          </button>
-        </div>
-      </article>
+        {{-- Si quieres mostrar badge de oferta --}}
+        @if($producto->especificaciones['oferta'] ?? false)
+          <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+            {{ $producto->especificaciones['badge'] ?? 'Oferta' }}
+          </span>
+        @endif
+      </div>
 
-      {{-- Card 4 --}}
-      <article class="bg-white border rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden">
-        <div class="relative">
-          <img
-            src="https://images.unsplash.com/photo-1618835962148-cf6dfc8e391c?q=80&w=800&auto=format&fit=crop"
-            alt="Producto 4"
-            class="w-full h-48 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-semibold text-gray-900 text-sm mb-1">
+          {{ $producto->titulo }}
+        </h3>
+
+        <div class="mb-2">
+          <span class="text-red-600 font-extrabold text-lg">
+            S/ {{ number_format($producto->precio_regular, 2) }}
+          </span>
+
+          @if(!empty($producto->especificaciones['precio_tachado']))
+            <span class="text-gray-400 line-through text-sm ml-2">
+              S/ {{ number_format($producto->especificaciones['precio_tachado'], 2) }}
+            </span>
+          @endif
         </div>
-        <div class="p-4 text-center">
-          <h3 class="font-semibold text-gray-900 text-sm mb-1">Tetera Gia 2.5 L</h3>
-          <div class="mb-2">
-            <span class="text-red-600 font-extrabold text-lg">S/ 95.90</span>
-          </div>
-          <button class="w-full bg-red-600 text-white font-semibold rounded-full py-2 hover:bg-red-700 transition">
-            AGREGAR AL CARRITO
-          </button>
-        </div>
-      </article>
 
-      {{-- Duplica más cards iguales si quieres --}}
-    </div>
+        <button class="w-full bg-red-600 text-white font-semibold rounded-full py-2 hover:bg-red-700 transition">
+          AGREGAR AL CARRITO
+        </button>
+      </div>
 
-    {{-- PAGINACIÓN DEMO (solo UI) --}}
-    <div class="lg:col-span-2 mt-8 flex items-center justify-center gap-2">
-      <button class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">&laquo;</button>
-      <button class="px-3 py-2 rounded-lg border text-sm bg-red-600 text-white">1</button>
-      <button class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">2</button>
-      <button class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">3</button>
-      <button class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">&raquo;</button>
-    </div>
+    </article>
+  @endforeach
 
-  </div>
+</div>
+
+{{-- PAGINACIÓN REAL --}}
+<div class="lg:col-span-2 mt-8">
+  {{ $productos->links() }}
+</div>
+
 </section>
 @endsection
