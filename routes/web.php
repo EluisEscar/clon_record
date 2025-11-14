@@ -1,8 +1,7 @@
 <?php
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', function () {
     return view('inicio');             
@@ -34,8 +33,11 @@ Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
 
-Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo');
+Route::get('/catalogo', [ProductController::class, 'index'])->name('catalogo');
 
+Route::get('/catalogo/{categoria}', [ProductController::class, 'index'])->name('catalogo.categoria');
+
+Route::get('/catalogo/{categoria}/{subcategoria}', [ProductController::class, 'index'])->name('catalogo.subcategoria');
 
 
 require __DIR__.'/auth.php';

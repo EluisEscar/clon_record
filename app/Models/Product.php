@@ -24,11 +24,25 @@ class Product extends Model
         'capacidad',
         'especificaciones',
         'estado',
+        'category_id',       
+        'subcategory_id',    
     ];
 
     // Casts automáticos para convertir arrays y JSON
     protected $casts = [
-        'imagenes' => 'array',        // convierte TEXT[] en array PHP
-        'especificaciones' => 'array' // convierte JSONB en array PHP
+        'imagenes' => 'array',         // TEXT[] → array PHP
+        'especificaciones' => 'array', // JSONB → array PHP
     ];
+
+    // Un producto pertenece a una categoría
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Un producto pertenece a una subcategoría
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class);
+    }
 }
